@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f5f7fb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(88, 166, 255, 0.10), transparent 28%),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.10), transparent 24%),
+    radial-gradient(circle at center top, rgba(255, 255, 255, 0.06), transparent 22%),
+    linear-gradient(to bottom, #030303 0%, #07090f 35%, #060606 70%, #020202 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+}
+
+.section-fade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.015),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.glass-panel {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.soft-shadow {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
